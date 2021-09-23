@@ -30,7 +30,7 @@ export default {
 <style>
 @import url(./assets/icon/css/materialdesignicons.min.css);
 #paddi_app {
-  font-family: "Roboto Mono", monospace !important;
+  /* font-family: "Roboto Mono", monospace !important; */
 }
 ::-webkit-scrollbar {
   width: 10px;

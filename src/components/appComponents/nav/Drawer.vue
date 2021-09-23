@@ -15,15 +15,12 @@
 import MiniDrawer from "./MiniDrawer.vue";
 import Tree from "../Tree.vue";
 export default {
-  data: () => ({
-    links: ["Home", "Contacts", "Settings"],
-  }),
   components: {
     MiniDrawer,
     Tree,
   },
-  mounted() {
-    this.$nextTick(() => {
+  methods: {
+    removeDrawerBorder() {
       const navigationBorder = document.querySelectorAll(
         "#drawer .v-navigation-drawer__border"
       );
@@ -31,13 +28,15 @@ export default {
       navigationBorder.forEach((element, i) => {
         element.style.display = "none";
       });
+    },
+  },
+  created() {
+    this.removeDrawerBorder();
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.removeDrawerBorder();
     });
   },
 };
 </script>
-
-<style scoped>
-/* * {
-  border-color: transparent !important;
-} */
-</style>

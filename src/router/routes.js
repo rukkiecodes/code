@@ -6,7 +6,7 @@ export default [
 
     children: [
       {
-        path: "editor",
+        path: "",
         name: "CodeEditor",
         component: () => import("../views/CodeEditor.vue")
       },

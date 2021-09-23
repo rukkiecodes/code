@@ -40,7 +40,7 @@ export default {
     items: [
       {
         items: [{ title: "List Item" }],
-        title: "CODE",
+        title: "Code",
       },
     ],
   }),

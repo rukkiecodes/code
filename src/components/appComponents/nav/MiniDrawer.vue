@@ -16,20 +16,14 @@
     </v-tooltip>
     <template v-slot:append>
       <div class="pa-2">
-        <v-tooltip right color="#1c1e31">
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn icon plain v-bind="attrs" v-on="on">
-              <v-icon>mdi-cog-outline</v-icon>
-            </v-btn>
-          </template>
-          <span class="text-caption">Manage</span>
-        </v-tooltip>
+        <Manage />
       </div>
     </template>
   </v-navigation-drawer>
 </template>
 
 <script>
+import Manage from "../menu/Manage.vue";
 export default {
   data: () => ({
     buttons: [
@@ -37,5 +31,8 @@ export default {
       { title: "Search Explorer (Ctr+Shift+E)", icon: "mdi-magnify" },
     ],
   }),
+  components: {
+    Manage,
+  },
 };
 </script>
