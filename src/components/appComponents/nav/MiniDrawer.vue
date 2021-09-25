@@ -1,10 +1,14 @@
 <template>
   <v-navigation-drawer
     dark
-    permanent
+    app
+    right
+    clipped
     mini-variant
+    id="miniDrawer"
     color="#1c1e31"
-    mini-variant-width="100%"
+    mini-variant-width="50"
+    v-model="drawer.miniDrawer"
   >
     <v-tooltip v-for="(button, i) in buttons" :key="i" right color="#1c1e31">
       <template v-slot:activator="{ on, attrs }">
@@ -23,6 +27,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import Manage from "../menu/Manage.vue";
 export default {
   data: () => ({
@@ -34,5 +39,27 @@ export default {
   components: {
     Manage,
   },
+  methods: {
+    removeDrawerBorder() {
+      const navigationBorder = document.querySelectorAll(
+        "#miniDrawer .v-navigation-drawer__border"
+      );
+
+      navigationBorder.forEach((element, i) => {
+        element.style.display = "none";
+      });
+    },
+  },
+  created() {
+    this.removeDrawerBorder();
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.removeDrawerBorder();
+    });
+  },
+  computed: {
+    ...mapState(['drawer'])
+  }
 };
 </script>

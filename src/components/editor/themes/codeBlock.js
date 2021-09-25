@@ -4,7 +4,7 @@ exports.isDark = true;
 exports.cssClass = "ace-codeBlock";
 exports.cssText = "\
 ace-codeBlock .ace_gutter {\
-background: #1C1E31;\
+background: #212337;\
 color: rgb(144,145,148)\
 }\
 .ace-codeBlock .ace_print-margin {\
@@ -12,7 +12,7 @@ width: 1px;\
 background: #e8e8e8\
 }\
 .ace-codeBlock {\
-background-color: #1C1E31;\
+background-color: #212337;\
 color: #f8f8f2\
 }\
 .ace-codeBlock .ace_cursor {\
@@ -22,7 +22,7 @@ color: #f8f8f0\
 background: #44475a\
 }\
 .ace-codeBlock.ace_multiselect .ace_selection.ace_start {\
-box-shadow: 0 0 3px 0px #1C1E31;\
+box-shadow: 0 0 3px 0px #212337;\
 border-radius: 2px\
 }\
 .ace-codeBlock .ace_marker-layer .ace_step {\
