@@ -7,7 +7,7 @@
         @init="editorInit"
         lang="html"
         class="mt-0 emailEditor"
-        :theme="'monokai'"
+        :theme="themeList.codeThemeName || 'monokai'"
         :height="editorHeight"
         :options="{
           fontSize: 15,
@@ -30,6 +30,7 @@
 import Bar from "../appComponents/nav/Bar.vue";
 import editorTheme from "./editorTheme";
 import init from "./editorInit";
+import { mapActions, mapState } from "vuex";
 require(["emmet/emmet"], (data) => {
   window.emmet = data.emmet;
 });
@@ -45,19 +46,27 @@ export default {
     editorHeight: null,
   }),
   methods: {
+    ...mapActions(["getEditorTheme"]),
     editorInit() {
       init();
     },
   },
+  updated() {
+    this.getEditorTheme();
+  },
   mounted() {
+    this.getEditorTheme();
     this.$nextTick(() => {
       const editorSheet = document.querySelector(".editorSheet");
       window.addEventListener("resize", () => {
         this.editorHeight = editorSheet.offsetHeight;
       });
+
+      console.log(this.themeList.codeThemeName);
     });
   },
   computed: {
+    ...mapState(["themeList"]),
     showGutter() {
       switch (this.$vuetify.breakpoint.name) {
         case "xs":
