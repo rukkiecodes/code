@@ -13,7 +13,7 @@
       class="d-flex justify-space-around align-center"
       :color="themeList.codeThemeColor || 'grey darken-4'"
     >
-      <v-icon small class="ml-2" color="green">mdi-vuejs</v-icon>
+      <v-icon small class="ml-2" color="orange darken-4">mdi-language-html5</v-icon>
       <span
         class="ml-2 text-captions"
         :class="{
@@ -33,7 +33,7 @@
             themeList.codeThemeName == 'textmate' ||
             themeList.codeThemeName == 'tomorrow',
         }"
-        >App.js</span
+        >index.html</span
       >
       <v-sheet
         v-ripple

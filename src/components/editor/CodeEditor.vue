@@ -7,7 +7,7 @@
         @init="editorInit"
         lang="html"
         class="mt-0 emailEditor"
-        :theme="themeList.codeThemeName || 'monokai'"
+        :theme="themeList.codeThemeName || 'codeBlock'"
         :height="editorHeight"
         :options="{
           fontSize: 15,

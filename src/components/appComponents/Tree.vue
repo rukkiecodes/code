@@ -14,9 +14,9 @@
         </template>
         <v-list-item link class="activeCode">
           <v-list-item-icon>
-            <v-icon small color="green">mdi-vuejs</v-icon>
+            <v-icon small color="orange darken-4">mdi-language-html5</v-icon>
           </v-list-item-icon>
-          <v-list-item-title>Title.vue</v-list-item-title>
+          <v-list-item-title class="ml-n3">index.html</v-list-item-title>
         </v-list-item>
       </v-list-group>
     </v-list>

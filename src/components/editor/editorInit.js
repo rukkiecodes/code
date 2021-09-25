@@ -36,6 +36,7 @@ const init = () => {
   require("brace/theme/tomorrow");
   require("brace/theme/twilight");
   require("brace/theme/vibrant_ink");
+  require("./themes/codeBlock") // custom theme
   /*EDITOR THEMES EDDS HERE*/
   require("brace/ext/language_tools");
   require("brace/ext/searchbox");

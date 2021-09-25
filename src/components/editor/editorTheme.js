@@ -21,6 +21,7 @@ export default [
     { title: "Clouds midnight", name: "clouds_midnight", color: "#232323" }, //dark
     { title: "Cobalt", name: "cobalt", color: "#011e3a" }, //dark
     { title: "Dracula", name: "dracula", color: "#282a36" }, //dark
+    { title: "Code block", name: "codeBlock", color: "#1C1E31" }, //dark
     { title: "Gob", name: "gob", color: "#0B1818" }, //dark
     { title: "Gruvbox", name: "gruvbox", color: "#3C3836" }, //dark
     { title: "Idle fingers", name: "idle_fingers", color: "#3b3b3b" }, //dark

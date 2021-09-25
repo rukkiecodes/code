@@ -8,7 +8,12 @@
       <v-avatar size="40" rounded>
         <img src="../../../assets/logo.svg" alt="" />
       </v-avatar>
-      <v-app-bar-title class="ml-3">Logo</v-app-bar-title>
+      <v-app-bar-title class="ml-3"
+        ><span class="deep-purple--text text--accent-4">{</span> Code Block <span
+          class="deep-purple--text text--accent-4"
+          >}</span
+        ></v-app-bar-title
+      >
     </v-sheet>
     <v-spacer />
     <v-btn
