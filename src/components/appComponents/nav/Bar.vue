@@ -5,6 +5,7 @@
     :color="themeList.codeThemeColor || 'grey darken-4'"
   >
     <v-sheet
+      v-if="false"
       height="100%"
       elevation="12"
       style="position: relative"

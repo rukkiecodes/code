@@ -15,7 +15,7 @@ export default {
       VueCookie.set("code theme color", theme.color);
       VueCookie.set("code theme name", theme.name);
       VueCookie.set("code theme title", theme.title);
-      // state.activateDialog = false
+      state.activateDialog = false
     },
     getEditorTheme: (state) => {
       setInterval(() => {
