@@ -1,7 +1,15 @@
 <template>
-  <v-sheet :height="sheetHeight" color="#121212" class="overflow-hidden">
+  <v-sheet
+    :height="sheetHeight"
+    color="red"
+    class="overflow-y-hidden d-flex flex-column justify-space-between"
+  >
     <Bar />
-    <v-sheet color="#212337" :height="editorSheetHeight" class="overflow-auto editorSheet">
+    <v-sheet
+      color="#212337"
+      :height="editorSheetHeight"
+      class="overflow-auto editorSheet"
+    >
       <v-sheet
         height="100%"
         color="transparent"
@@ -9,12 +17,24 @@
         class="d-flex justify-center align-center"
       >
         <v-avatar tile size="300" color="transparent">
-          <v-img lazy-src="../../assets/logoBg.svg" src="../../assets/logoBg.svg" />
+          <v-img
+            lazy-src="../../assets/logoBg.svg"
+            src="../../assets/logoBg.svg"
+          />
         </v-avatar>
       </v-sheet>
       <HTML v-if="editor.showHTML == true" />
       <CSS v-if="editor.showCSS == true" />
       <JS v-if="editor.showJS == true" />
+    </v-sheet>
+    <v-sheet
+      height="200"
+      class="overflow-auto"
+      :color="themeList.codeThemeColor || '#212337'"
+    >
+      <v-system-bar :color="themeList.codeThemeColor || '#212337'">
+        <span>Console -></span>
+      </v-system-bar>
     </v-sheet>
   </v-sheet>
 </template>
@@ -38,7 +58,7 @@ export default {
     JS,
   },
   computed: {
-    ...mapState(["editor"]),
+    ...mapState(["editor", "themeList"]),
     sheetHeight() {
       switch (this.$vuetify.breakpoint.name) {
         case "xs":
