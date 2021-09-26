@@ -29,12 +29,16 @@ export default {
 
 <style>
 @import url(./assets/icon/css/materialdesignicons.min.css);
-#paddi_app {
-  /* font-family: "Roboto Mono", monospace !important; */
-}
 ::-webkit-scrollbar {
   width: 10px;
 }
+
+@media screen and (max-width: 600px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
 ::-webkit-scrollbar-track {
   background: #121212;
 }
