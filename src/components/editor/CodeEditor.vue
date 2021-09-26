@@ -1,19 +1,20 @@
 <template>
-  <v-sheet :height="shertHeight" color="#121212" class="overflow-hidden">
+  <v-sheet :height="sheetHeight" color="#121212" class="overflow-hidden">
     <Bar />
-    <v-sheet color="#212337" height="100%" class="overflow-auto editorSheet">
+    <v-sheet color="#212337" :height="editorSheetHeight" class="overflow-auto editorSheet">
       <v-sheet
-        class="d-flex justify-center align-center"
-        color="transparent"
         height="100%"
+        color="transparent"
+        v-if="editor.showInitialBackground == true"
+        class="d-flex justify-center align-center"
       >
         <v-avatar tile size="300" color="transparent">
           <v-img lazy-src="../../assets/logoBg.svg" src="../../assets/logoBg.svg" />
         </v-avatar>
       </v-sheet>
-      <HTML v-show="false" />
-      <CSS v-show="false" />
-      <JS v-show="false" />
+      <HTML v-if="editor.showHTML == true" />
+      <CSS v-if="editor.showCSS == true" />
+      <JS v-if="editor.showJS == true" />
     </v-sheet>
   </v-sheet>
 </template>
@@ -24,6 +25,7 @@ import Bar from "../appComponents/nav/Bar.vue";
 import HTML from "./code/HTML.vue";
 import CSS from "./code/CSS.vue";
 import JS from "./code/JS.vue";
+import { mapState } from "vuex";
 require(["emmet/emmet"], (data) => {
   window.emmet = data.emmet;
 });
@@ -36,7 +38,8 @@ export default {
     JS,
   },
   computed: {
-    shertHeight() {
+    ...mapState(["editor"]),
+    sheetHeight() {
       switch (this.$vuetify.breakpoint.name) {
         case "xs":
           return "93vh";
@@ -48,6 +51,20 @@ export default {
           return "93vh";
         case "xl":
           return "93vh";
+      }
+    },
+    editorSheetHeight() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          return "88vh";
+        case "sm":
+          return "92.2vh";
+        case "md":
+          return "94vh";
+        case "lg":
+          return "88.4vh";
+        case "xl":
+          return "88.4vh";
       }
     },
   },

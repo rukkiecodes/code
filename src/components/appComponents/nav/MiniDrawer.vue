@@ -49,17 +49,33 @@ export default {
         element.style.display = "none";
       });
     },
+    showMiniDrawer() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          return (this.drawer.miniDrawer = false);
+        case "sm":
+          return (this.drawer.miniDrawer = false);
+        case "md":
+          return (this.drawer.miniDrawer = false);
+        case "lg":
+          return (this.drawer.miniDrawer = true);
+        case "xl":
+          return (this.drawer.miniDrawer = true);
+      }
+    },
   },
   created() {
     this.removeDrawerBorder();
+    this.showMiniDrawer();
   },
   mounted() {
     this.$nextTick(() => {
       this.removeDrawerBorder();
+      this.showMiniDrawer();
     });
   },
   computed: {
-    ...mapState(['drawer'])
-  }
+    ...mapState(["drawer"]),
+  },
 };
 </script>

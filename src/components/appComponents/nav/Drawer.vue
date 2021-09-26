@@ -28,13 +28,30 @@ export default {
         element.style.display = "none";
       });
     },
+
+    showDrawer() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          return (this.drawer.drawer = false);
+        case "sm":
+          return (this.drawer.drawer = false);
+        case "md":
+          return (this.drawer.drawer = false);
+        case "lg":
+          return (this.drawer.drawer = true);
+        case "xl":
+          return (this.drawer.drawer = true);
+      }
+    },
   },
   created() {
     this.removeDrawerBorder();
+    this.showDrawer();
   },
   mounted() {
     this.$nextTick(() => {
       this.removeDrawerBorder();
+      this.showDrawer();
     });
   },
   computed: {
