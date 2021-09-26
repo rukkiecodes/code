@@ -1,7 +1,7 @@
 <template>
   <editor
     @init="editorInit"
-    lang="html"
+    lang="css"
     class="mt-0 emailEditor"
     :theme="themeList.codeThemeName || 'codeBlock'"
     :height="editorHeight"

@@ -45,7 +45,7 @@ const init = () => {
   require("brace/keybinding/emacs");
   require("brace/mode/html");
   require("brace/mode/javascript");
-  require("brace/mode/less");
+  require("brace/mode/css");
   require("brace/ext/beautify");
 };
 
