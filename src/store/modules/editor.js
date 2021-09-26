@@ -4,6 +4,7 @@ export default {
     showHTML: false,
     showCSS: false,
     showJS: false,
+    javascriptCode: null
   },
   mutations: {
     showHTMLEditor: (state) => {

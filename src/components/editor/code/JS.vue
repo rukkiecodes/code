@@ -1,12 +1,15 @@
 <template>
   <editor
     @init="editorInit"
+    ref="jsEditor"
     lang="javascript"
-    class="mt-0 emailEditor"
+    class="mt-0"
+    v-model="editor.javascriptCode"
     :theme="themeList.codeThemeName || 'codeBlock'"
     :height="editorHeight"
     :options="{
-      fontSize: 15,
+      fontSize: '12pt',
+      fontFamily: 'Victor mono',
       showPrintMargin: false,
       wrap: true,
       tabSize: 2,
@@ -15,6 +18,9 @@
       showGutter: showGutter,
       showLineNumbers: true,
       fadeFoldWidgets: true,
+      enableBasicAutocompletion: true,
+      enableLiveAutocompletion: true,
+      enableSnippets: true,
     }"
   ></editor>
 </template>
@@ -46,16 +52,17 @@ export default {
     this.getEditorTheme();
   },
   mounted() {
-    this.getEditorTheme();
     this.$nextTick(() => {
+    this.getEditorTheme();
       const editorSheet = document.querySelector(".editorSheet");
       window.addEventListener("resize", () => {
         this.editorHeight = editorSheet.offsetHeight;
       });
+      // console.log(this.$refs.jsEditor.editor)
     });
   },
   computed: {
-    ...mapState(["themeList"]),
+    ...mapState(["themeList", "editor"]),
     showGutter() {
       switch (this.$vuetify.breakpoint.name) {
         case "xs":

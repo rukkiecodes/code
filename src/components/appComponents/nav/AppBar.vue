@@ -18,6 +18,13 @@
     </v-sheet>
     <v-spacer />
     <v-btn
+      @click="executeJSCode"
+      depressed
+      class="text-capitalize"
+      color="deep-purple accent-4"
+      >Run</v-btn
+    >
+    <v-btn
       @click="drawer.miniDrawer = !drawer.miniDrawer"
       tile
       icon
@@ -34,14 +41,18 @@
 import { mapState } from "vuex";
 
 export default {
+  methods: {
+    executeJSCode() {
+      const javascriptCode = this.editor.javascriptCode;
+      try {
+        console.log(new Function(javascriptCode)());
+      } catch (err) {
+        console.error(err);
+      }
+    },
+  },
   computed: {
-    ...mapState(["drawer"]),
+    ...mapState(["drawer", "editor"]),
   },
 };
 </script>
-
-<style scoped>
-.f {
-  background: #1c1e31;
-}
-</style>
