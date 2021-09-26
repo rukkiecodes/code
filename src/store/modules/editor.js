@@ -9,8 +9,8 @@ export default {
     showHTMLEditor: (state) => {
       state.showInitialBackground = false;
       state.showHTML = true;
-      state.showCSS = false
-      state.showJS = false
+      state.showCSS = false;
+      state.showJS = false;
     },
     showCSSEditor: (state) => {
       state.showInitialBackground = false;
@@ -22,7 +22,25 @@ export default {
       state.showInitialBackground = false;
       state.showHTML = false;
       state.showCSS = false;
-      state.showJS = true
+      state.showJS = true;
+    },
+    closeHTMLEditor: (state) => {
+      state.showInitialBackground = true;
+      state.showHTML = false;
+      state.showCSS = false;
+      state.showJS = false;
+    },
+    closeCSSEditor: (state) => {
+      state.showInitialBackground = true;
+      state.showHTML = false;
+      state.showCSS = false;
+      state.showJS = false;
+    },
+    closeJSEditor: (state) => {
+      state.showInitialBackground = true;
+      state.showHTML = false;
+      state.showCSS = false;
+      state.showJS = false;
     },
   },
   actions: {
@@ -34,6 +52,15 @@ export default {
     },
     showJSEditor({ commit }) {
       commit("showJSEditor");
+    },
+    closeHTMLEditor({ commit }) {
+      commit("closeHTMLEditor");
+    },
+    closeCSSEditor({ commit }) {
+      commit("closeCSSEditor");
+    },
+    closeJSEditor({ commit }) {
+      commit("closeJSEditor");
     },
   },
 };

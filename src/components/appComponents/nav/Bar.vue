@@ -116,6 +116,7 @@
       <v-sheet
         v-ripple
         style="cursor: pointer"
+        @click="closeCSSEditor"
         :color="themeList.codeThemeColor"
         class="d-flex justify-center align-center text-center ma-0 pa-0 rounded-sm ml-3 mr-2"
       >
@@ -189,6 +190,7 @@
       <v-sheet
         v-ripple
         style="cursor: pointer"
+        @click="closeJSEditor"
         :color="themeList.codeThemeColor"
         class="d-flex justify-center align-center text-center ma-0 pa-0 rounded-sm ml-3 mr-2"
       >
@@ -233,7 +235,7 @@ export default {
     showCloseIcon: false,
   }),
   methods: {
-    ...mapActions(["closeHTMLEditor"])
+    ...mapActions(["closeHTMLEditor", "closeCSSEditor", "closeJSEditor"])
   },
   computed: {
     ...mapState(["themeList", "editor"]),
