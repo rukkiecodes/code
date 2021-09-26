@@ -17,13 +17,20 @@
       >
     </v-sheet>
     <v-spacer />
-    <v-btn
-      @click="executeJSCode"
-      depressed
-      class="text-capitalize"
-      color="deep-purple accent-4"
-      >Run</v-btn
-    >
+    <v-tooltip bottom color="#1c1e31">
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn
+          depressed
+          @click="executeJSCode"
+          class="text-capitalize"
+          v-bind="attrs"
+          v-on="on"
+          color="deep-purple accent-4"
+          >Run</v-btn
+        >
+      </template>
+      <span class="text-caption">Crl+sift+enter</span>
+    </v-tooltip>
     <v-btn
       @click="drawer.miniDrawer = !drawer.miniDrawer"
       tile

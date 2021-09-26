@@ -6,15 +6,25 @@
     :theme="themeList.codeThemeName || 'codeBlock'"
     :height="editorHeight"
     :options="{
-      fontSize: 15,
-      showPrintMargin: false,
       wrap: true,
       tabSize: 2,
+      fontSize: '10pt',
       useSoftTabs: true,
+      scrollPastEnd: true,
+      animatedScroll: true,
+      enableSnippets: true,
       showInvisibles: false,
-      showGutter: showGutter,
-      showLineNumbers: true,
       fadeFoldWidgets: true,
+      showLineNumbers: true,
+      cursorStyle: 'smooth',
+      showGutter: showGutter,
+      showPrintMargin: false,
+      enableMultiselect: true,
+      fontFamily: 'Victor mono',
+      displayIndentGuides: true,
+      autoScrollEditorIntoView: true,
+      enableLiveAutocompletion: true,
+      enableBasicAutocompletion: true,
     }"
   ></editor>
 </template>

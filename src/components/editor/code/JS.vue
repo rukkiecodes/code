@@ -8,19 +8,25 @@
     :theme="themeList.codeThemeName || 'codeBlock'"
     :height="editorHeight"
     :options="{
-      fontSize: '12pt',
-      fontFamily: 'Victor mono',
-      showPrintMargin: false,
       wrap: true,
       tabSize: 2,
+      fontSize: '10pt',
       useSoftTabs: true,
-      showInvisibles: false,
-      showGutter: showGutter,
-      showLineNumbers: true,
-      fadeFoldWidgets: true,
-      enableBasicAutocompletion: true,
-      enableLiveAutocompletion: true,
+      scrollPastEnd: true,
+      animatedScroll: true,
       enableSnippets: true,
+      showInvisibles: false,
+      fadeFoldWidgets: true,
+      showLineNumbers: true,
+      cursorStyle: 'smooth',
+      showGutter: showGutter,
+      showPrintMargin: false,
+      enableMultiselect: true,
+      fontFamily: 'Victor mono',
+      displayIndentGuides: true,
+      autoScrollEditorIntoView: true,
+      enableLiveAutocompletion: true,
+      enableBasicAutocompletion: true,
     }"
   ></editor>
 </template>
@@ -53,7 +59,7 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-    this.getEditorTheme();
+      this.getEditorTheme();
       const editorSheet = document.querySelector(".editorSheet");
       window.addEventListener("resize", () => {
         this.editorHeight = editorSheet.offsetHeight;

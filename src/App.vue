@@ -30,7 +30,7 @@ export default {
 <style>
 @import url(./assets/icon/css/materialdesignicons.min.css);
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 @media screen and (max-width: 600px) {
